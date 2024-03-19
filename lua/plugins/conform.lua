@@ -1,14 +1,15 @@
 return {
   "stevearc/conform.nvim",
   keys = {
+    { "<leader>cf", false },
     {
       -- Customize or remove this keymap to your liking
-      "<leader>cf",
+      "<leader>lf",
       function()
         require("conform").format({ async = true, lsp_fallback = true })
       end,
       mode = "",
-      desc = "Format buffer",
+      desc = "Format buffer with comform.nvim",
     },
   },
   opts = {
