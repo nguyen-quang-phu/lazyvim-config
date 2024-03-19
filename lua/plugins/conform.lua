@@ -40,6 +40,11 @@ return {
         args = { "exec", "erb-format", "-w", "$FILENAME" },
         stdin = false,
       },
+      rubocop = {
+        command = "bundle",
+        args = { "exec", "rubocop", "-A", "$FILENAME" },
+        stdin = false,
+      },
     },
   },
 }
