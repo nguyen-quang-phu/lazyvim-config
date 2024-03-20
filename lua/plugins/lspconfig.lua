@@ -13,6 +13,7 @@ return {
       },
     },
     servers = {
+      emmet_language_server={},
       solargraph = {
         mason = false,
         settings = {

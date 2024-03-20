@@ -19,6 +19,11 @@ return {
     formatters_by_ft = {
       ruby = { "rubocop" },
       eruby = { "erb_lint", "erb_formatter" },
+      javascript = { "eslint_d", "prettierd" },
+      javascriptreact = { "eslint_d", "prettierd" },
+      typescript = { "eslint_d", "prettierd" },
+      typescriptreact = { "eslint_d", "prettierd" },
+      vue = { "eslint_d", "prettierd" },
     },
     formatters = {
       ---@type conform.FileFormatterConfig

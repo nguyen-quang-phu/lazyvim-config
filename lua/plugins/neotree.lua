@@ -37,5 +37,13 @@ return {
         end,
       },
     },
+    keys = {
+      {
+        "<leader>e",
+        "<cmd>Neotree focus<cr>",
+        mode = "n",
+        desc = "NEOTREE: focus",
+      }
+    }
   },
 }
