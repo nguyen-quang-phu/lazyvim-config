@@ -7,3 +7,9 @@ vim.opt.showtabline = 0
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
 vim.opt.swapfile = false
+
+vim.filetype.add({
+  extension = {
+    yml = 'yaml'
+  }
+})
