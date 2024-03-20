@@ -6,16 +6,16 @@ return {
       function()
         require("telescope.builtin").live_grep()
       end,
-      mode = "",
-      desc = "Find word in project",
+      mode = "n",
+      desc = "TELESCOPE: Find Word in Project",
     },
     {
       "<leader>ff",
       function()
         require("telescope.builtin").find_files()
       end,
-      mode = "",
-      desc = "Find file in project",
+      mode = "n",
+      desc = "TELESCOPE: Find File in Project",
     },
   },
 }
