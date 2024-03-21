@@ -20,7 +20,7 @@ return {
   },
   keys = {
     {
-      "<leader>f2",
+      "<leader>fw",
       function()
         require("telescope.builtin").live_grep()
       end,
