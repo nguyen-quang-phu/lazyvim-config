@@ -13,7 +13,21 @@ return {
       },
     },
     servers = {
-      emmet_language_server={},
+      emmet_language_server = {},
+      css_variables = {},
+      cssls = {},
+      tailwindcss = {
+        settings = {
+          tailwindCSS = {
+            experimental = {
+              classRegex = {
+                { "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+                { "cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
+              },
+            },
+          },
+        },
+      },
       solargraph = {
         mason = false,
         settings = {
