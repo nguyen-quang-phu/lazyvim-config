@@ -4,7 +4,7 @@ return {
     require("lspsaga").setup({
       code_action = {
         show_server_name = true,
-      }
+      },
     })
   end,
   dependencies = {
@@ -17,6 +17,12 @@ return {
       "<cmd>Lspsaga code_action<CR>",
       mode = "n",
       desc = "LSPSAGA: Code Action",
+    },
+    {
+      "<leader>lr",
+      "<cmd>Lspsaga rename<CR>",
+      mode = "n",
+      desc = "LSPSAGA: Rename",
     },
   },
 }
