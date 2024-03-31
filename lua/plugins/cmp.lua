@@ -12,6 +12,7 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "onsails/lspkind.nvim",
+      "saadparwaiz1/cmp_luasnip",
     },
     enabled = true,
     opts = function()
