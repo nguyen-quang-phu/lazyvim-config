@@ -8,6 +8,8 @@ vim.opt.showtabline = 0
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
 vim.opt.swapfile = false
+vim.opt.eof = true
+vim.opt.eol = true
 
 vim.filetype.add({
   extension = {
