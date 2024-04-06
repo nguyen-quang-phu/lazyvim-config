@@ -2,7 +2,7 @@ return {
   "mfussenegger/nvim-lint",
   opts = {
     linters_by_ft = {
-      ["*"] = { "cspell" },
+      ["*"] = { "codespell" },
       lua = { "luacheck" },
       ruby = { "rubocop" },
       eruby = { "erb_lint" },
