@@ -7,4 +7,8 @@ return {
     "AndrewRadev/switch.vim",
     lazy = false,
   },
+  {
+    "AndrewRadev/splitjoin.vim",
+    lazy = false,
+  },
 }

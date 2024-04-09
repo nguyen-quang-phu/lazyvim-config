@@ -1,5 +1,9 @@
 return {
   {
+    "axelvc/template-string.nvim",
+    lazy = true,
+  },
+  {
     "vuki656/package-info.nvim",
     dependencies = { "MunifTanjim/nui.nvim" },
     opts = {},

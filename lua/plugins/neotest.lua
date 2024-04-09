@@ -1,30 +1,31 @@
 return {
   "nvim-neotest/neotest",
   optional = true,
+  lazy = false,
   dependencies = {
+    "nvim-neotest/nvim-nio",
     "nvim-lua/plenary.nvim",
+    "antoinemadec/FixCursorHold.nvim",
     "nvim-treesitter/nvim-treesitter",
     "olimorris/neotest-rspec",
     "marilari88/neotest-vitest",
     "thenbe/neotest-playwright",
   },
   opts = {
-    adapters = {
-      ["neotest-rspec"] = {
-        -- NOTE: By default neotest-rspec uses the system wide rspec gem instead of the one through bundler
-        rspec_cmd = function()
-          return vim.tbl_flatten({
-            "bundle",
-            "exec",
-            "rspec",
-          })
-        end,
-      },
-      ["neotest-vitest"] = {},
-      ["neotest-playwright"] = {},
-    },
+    -- adapters = {
+    --   ["neotest-rspec"] = {
+    --     -- NOTE: By default neotest-rspec uses the system wide rspec gem instead of the one through bundler
+    --     rspec_cmd = function()
+    --       return vim.tbl_flatten({
+    --         "bundle",
+    --         "exec",
+    --         "rspec",
+    --       })
+    --     end,
+    --   },
+    -- },
   },
-  config = function()
+  config = function(opts)
     require("neotest").setup({
       adapters = {
         require("neotest-playwright").adapter({
@@ -42,6 +43,15 @@ return {
           end,
           is_test_file = function(file_path)
             return string.match(file_path, "__test__")
+          end,
+        }),
+        require("neotest-rspec")({
+          rspec_cmd = function()
+            return vim.tbl_flatten({
+              "bundle",
+              "exec",
+              "rspec",
+            })
           end,
         }),
       },
