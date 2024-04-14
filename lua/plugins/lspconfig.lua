@@ -13,10 +13,12 @@ return {
         end,
       },
     },
+    ---@type lspconfig.options
     servers = {
       emmet_language_server = {},
       css_variables = {},
       cssls = {},
+      phpactor = {},
       volar = {
         settings = {
           volar = {
@@ -91,6 +93,15 @@ return {
                 { "cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
               },
             },
+          },
+        },
+      },
+      eslint = {
+        mason = false,
+        root_dir = require("lspconfig.util").root_pattern("package.json"),
+        settings = {
+          eslint = {
+            workingDirectory = { mode = "auto" },
           },
         },
       },

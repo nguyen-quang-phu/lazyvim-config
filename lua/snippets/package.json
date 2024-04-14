@@ -6,8 +6,16 @@
   "contributes": {
     "snippets": [
       {
+        "language": "json",
+        "path": "./snippets.json"
+      },
+      {
         "language": "ruby",
         "path": "./rails.json"
+      },
+      {
+        "language": "ruby",
+        "path": "./rspec.json"
       },
       {
         "language": "javascript",
