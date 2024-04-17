@@ -98,7 +98,7 @@ return {
       },
       eslint = {
         mason = false,
-        root_dir = require("lspconfig.util").root_pattern("package.json"),
+        -- root_dir = require("lspconfig.util").root_pattern("package.json"),
         settings = {
           eslint = {
             workingDirectory = { mode = "auto" },
