@@ -1,8 +1,4 @@
 {
-  "name": "harvey snippets",
-  "engines": {
-    "vscode": "^1.11.0"
-  },
   "contributes": {
     "snippets": [
       {
@@ -20,7 +16,17 @@
       {
         "language": "javascript",
         "path": "./javascript.json"
+      },
+      {
+        "language": [
+          "vue"
+        ],
+        "path": "./vue.json"
       }
     ]
-  }
+  },
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "name": "harvey snippets"
 }

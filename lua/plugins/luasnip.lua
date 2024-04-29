@@ -98,10 +98,9 @@ return {
     -- include the default astronvim config that calls the setup call
     -- require "plugins.configs.luasnip"(plugin, opts)
     -- load snippets paths
-    -- require("luasnip.loaders.from_vscode").lazy_load({
-    --   -- exclude = { "javascript", "ruby" },
-    --   paths = { "./lua/snippets" },
-    -- })
+    require("luasnip.loaders.from_vscode").lazy_load({
+      paths = { "./lua/snippets" },
+    })
     require("luasnip.loaders.from_lua").lazy_load({
       paths = { "./lua/luasnips" },
     })

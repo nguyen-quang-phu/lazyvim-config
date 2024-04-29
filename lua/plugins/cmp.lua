@@ -60,6 +60,7 @@ return {
         formatting = {
           fields = { "abbr", "kind", "menu" },
           format = lspkind_status_ok and lspkind.cmp_format({
+            before = require("tailwind-tools.cmp").lspkind_format,
             mode = "symbol_text",
             show_labelDetails = true,
             symbol_map = { Codeium = "" },
