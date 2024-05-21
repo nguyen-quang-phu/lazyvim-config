@@ -15,7 +15,21 @@ return {
     },
     ---@type lspconfig.options
     servers = {
+      ---@type lspconfig.options.lua_ls
+      lua_ls = {
+        settings = {
+          Lua = {
+            hint = {
+              enable = true,
+              setType = true,
+              paramName = "All",
+              paramType = true,
+            },
+          },
+        },
+      },
       emmet_language_server = {},
+      sqls = {},
       css_variables = {},
       cssls = {},
       phpactor = {},
@@ -26,46 +40,48 @@ return {
           },
         },
       },
+      ---@type lspconfig.options.tsserver
       tsserver = {
-        keys = {
-          {
-            "<leader>co",
-            function()
-              vim.lsp.buf.code_action({
-                apply = true,
-                context = {
-                  only = { "source.organizeImports.ts" },
-                  diagnostics = {},
-                },
-              })
-            end,
-            desc = "Organize Imports",
-          },
-          {
-            "<leader>cR",
-            function()
-              vim.lsp.buf.code_action({
-                apply = true,
-                context = {
-                  only = { "source.removeUnused.ts" },
-                  diagnostics = {},
-                },
-              })
-            end,
-            desc = "Remove Unused Imports",
-          },
-        },
-        filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+        -- keys = {
+        --   {
+        --     "<leader>co",
+        --     function()
+        --       vim.lsp.buf.code_action({
+        --         apply = true,
+        --         context = {
+        --           only = { "source.organizeImports.ts" },
+        --           diagnostics = {},
+        --         },
+        --       })
+        --     end,
+        --     desc = "Organize Imports",
+        --   },
+        --   {
+        --     "<leader>cR",
+        --     function()
+        --       vim.lsp.buf.code_action({
+        --         apply = true,
+        --         context = {
+        --           only = { "source.removeUnused.ts" },
+        --           diagnostics = {},
+        --         },
+        --       })
+        --     end,
+        --     desc = "Remove Unused Imports",
+        --   },
+        -- },
+        -- filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
         settings = {
-          completions = {
-            completeFunctionCalls = true,
-          },
+          --   completions = {
+          --     completeFunctionCalls = true,
+          --   },
           typescript = {
             inlayHints = {
-              includeInlayParameterNameHints = "literal",
+              includeCompletionsWithInsertText = true,
+              includeInlayParameterNameHints = "all",
               includeInlayParameterNameHintsWhenArgumentMatchesName = false,
               includeInlayFunctionParameterTypeHints = true,
-              includeInlayVariableTypeHints = false,
+              includeInlayVariableTypeHints = true,
               includeInlayPropertyDeclarationTypeHints = true,
               includeInlayFunctionLikeReturnTypeHints = true,
               includeInlayEnumMemberValueHints = true,
@@ -73,6 +89,7 @@ return {
           },
           javascript = {
             inlayHints = {
+              includeCompletionsWithInsertText = true,
               includeInlayParameterNameHints = "all",
               includeInlayParameterNameHintsWhenArgumentMatchesName = false,
               includeInlayFunctionParameterTypeHints = true,
@@ -95,7 +112,7 @@ return {
                 { "clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
                 { "(?:enter|leave)(?:From|To)?=\\s*(?:\"|')([^(?:\"|')]*)" },
                 { "cn\\(([^)]*)\\)", "'([^']*)'" },
-                {":class?=\\s*(?:\"|'|{`)([^(?:\"|'|`})]*)"}
+                { ":class?=\\s*(?:\"|'|{`)([^(?:\"|'|`})]*)" },
               },
             },
           },

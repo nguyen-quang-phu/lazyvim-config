@@ -100,6 +100,7 @@ return {
           javascriptreact = "typescript",
           json = "json",
           lua = "lua",
+          ruby = "ruby",
           markdown = "markdown",
           python = "python",
           sass = "css",
@@ -140,6 +141,28 @@ return {
           json = {
             augend.integer.alias.decimal, -- nonnegative and negative decimal number
             augend.semver.alias.semver, -- versioning (v1.1.2)
+          },
+          ruby = {
+            augend.constant.new({
+              elements = { "belongs_to", "has_one", "has_many" },
+              word = true, -- if false, "sand" is incremented into "sor", "doctor" into "doctand", etc.
+              cyclic = true, -- "or" is incremented into "and".
+            }),
+            augend.constant.new({
+              elements = { "true", "false" },
+              word = true, -- if false, "sand" is incremented into "sor", "doctor" into "doctand", etc.
+              cyclic = true, -- "or" is incremented into "and".
+            }),
+            augend.constant.new({
+              elements = { "present", "blank" },
+              word = true, -- if false, "sand" is incremented into "sor", "doctor" into "doctand", etc.
+              cyclic = true, -- "or" is incremented into "and".
+            }),
+            augend.constant.new({
+              elements = { "if", "unless" },
+              word = true, -- if false, "sand" is incremented into "sor", "doctor" into "doctand", etc.
+              cyclic = true, -- "or" is incremented into "and".
+            }),
           },
           lua = {
             augend.integer.alias.decimal, -- nonnegative and negative decimal number
