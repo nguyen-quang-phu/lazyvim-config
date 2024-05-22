@@ -40,6 +40,15 @@ return {
           },
         },
       },
+      ---@type lspconfig.options.gopls
+      gopls = {
+        settings={
+         gopls={
+           hint={
+            } 
+          } 
+        }
+      },
       ---@type lspconfig.options.tsserver
       tsserver = {
         -- keys = {
@@ -127,9 +136,23 @@ return {
           },
         },
       },
+      ---@type lspconfig.options.ruby_lsp
+      -- ruby_lsp = {
+      --   mason = false,
+      --   -- settings={
+      --   --  ruby_lsp={
+      --   --
+      --   --   }
+      --   -- }
+      -- },
+      ---@type lspconfig.options.solargraph
       solargraph = {
+        enable = false,
         mason = false,
         settings = {
+          hint = {
+            enable = true,
+          },
           solargraph = {
             diagnostics = false,
           },
