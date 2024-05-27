@@ -28,6 +28,7 @@ return {
           },
         },
       },
+      golangci_lint_ls={},
       emmet_language_server = {},
       sqls = {},
       css_variables = {},
@@ -42,12 +43,25 @@ return {
       },
       ---@type lspconfig.options.gopls
       gopls = {
-        settings={
-         gopls={
-           hint={
-            } 
-          } 
-        }
+        settings = {
+          gopls = {
+            completeUnimported = true,
+            usePlaceholders = true,
+            analyses={
+              unusedvariable=true,
+              useany=true
+            },
+            hints = {
+              assignVariableTypes = true,
+              compositeLiteralFields = true,
+              compositeLiteralTypes = true,
+              constantValues = true,
+              functionTypeParameters = true,
+              parameterNames = true,
+              rangeVariableTypes = true,
+            },
+          },
+        },
       },
       ---@type lspconfig.options.tsserver
       tsserver = {

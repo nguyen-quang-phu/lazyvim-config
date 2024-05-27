@@ -17,6 +17,7 @@ return {
       timeout_ms = 30000,
     },
     formatters_by_ft = {
+      go = { "gofumpt", "goimports-reviser", "golines" },
       ruby = { "rubocop" },
       eruby = { "erb_lint", "erb_formatter" },
       javascript = { "eslint_d", "prettier" },
