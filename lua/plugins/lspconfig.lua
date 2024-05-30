@@ -28,7 +28,7 @@ return {
           },
         },
       },
-      golangci_lint_ls={},
+      golangci_lint_ls = {},
       emmet_language_server = {},
       sqls = {},
       css_variables = {},
@@ -47,9 +47,9 @@ return {
           gopls = {
             completeUnimported = true,
             usePlaceholders = true,
-            analyses={
-              unusedvariable=true,
-              useany=true
+            analyses = {
+              unusedvariable = true,
+              useany = true,
             },
             hints = {
               assignVariableTypes = true,
@@ -63,67 +63,85 @@ return {
           },
         },
       },
-      ---@type lspconfig.options.tsserver
-      tsserver = {
-        -- keys = {
-        --   {
-        --     "<leader>co",
-        --     function()
-        --       vim.lsp.buf.code_action({
-        --         apply = true,
-        --         context = {
-        --           only = { "source.organizeImports.ts" },
-        --           diagnostics = {},
-        --         },
-        --       })
-        --     end,
-        --     desc = "Organize Imports",
-        --   },
-        --   {
-        --     "<leader>cR",
-        --     function()
-        --       vim.lsp.buf.code_action({
-        --         apply = true,
-        --         context = {
-        --           only = { "source.removeUnused.ts" },
-        --           diagnostics = {},
-        --         },
-        --       })
-        --     end,
-        --     desc = "Remove Unused Imports",
-        --   },
-        -- },
-        -- filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+      -- ---@type lspconfig.options.tsserver
+      -- tsserver = {
+      --   settings = {
+      --     tsserver = {
+      --       completions = {
+      --         completeFunctionCalls = true,
+      --       },
+      --     },
+      --     typescript = {
+      --       inlayHints = {
+      --         includeCompletionsWithInsertText = true,
+      --         includeInlayParameterNameHints = "all",
+      --         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+      --         includeInlayFunctionParameterTypeHints = true,
+      --         includeInlayVariableTypeHints = true,
+      --         includeInlayPropertyDeclarationTypeHints = true,
+      --         includeInlayFunctionLikeReturnTypeHints = true,
+      --         includeInlayEnumMemberValueHints = true,
+      --       },
+      --     },
+      --     javascript = {
+      --       suggest = {
+      --         autoImports = true,
+      --         completeFunctionCalls = true,
+      --         includeAutomaticOptionalChainCompletions=true
+      --       },
+      --       experimental = {
+      --         updateImportsOnPaste = true,
+      --       },
+      --       format = {
+      --         semicolons = "insert",
+      --       },
+      --       inlayHints = {
+      --         includeCompletionsWithInsertText = true,
+      --         includeInlayParameterNameHints = "all",
+      --         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+      --         includeInlayFunctionParameterTypeHints = true,
+      --         includeInlayVariableTypeHints = true,
+      --         includeInlayPropertyDeclarationTypeHints = true,
+      --         includeInlayFunctionLikeReturnTypeHints = true,
+      --         includeInlayEnumMemberValueHints = true,
+      --         enumMemberValues = {
+      --           enabled = true,
+      --         },
+      --         functionLikeReturnTypes = {
+      --           enabled = true,
+      --         },
+      --         parameterNames = {
+      --           enabled = "all",
+      --           suppressWhenArgumentMatchesName = "all",
+      --         },
+      --         parameterTypes = {
+      --           enabled = true,
+      --         },
+      --         propertyDeclarationTypes = {
+      --           enabled = true,
+      --         },
+      --         variableTypes = {
+      --           enabled = true,
+      --           suppressWhenTypeMatchesName = "all",
+      --         },
+      --       },
+      --       referencesCodeLens = {
+      --         enabled = true,
+      --         showOnAllFunctions = true,
+      --       },
+      --     },
+      --   },
+      -- },
+      ---@type lspconfig.options.vtsls
+      vtsls = {
         settings = {
-          --   completions = {
-          --     completeFunctionCalls = true,
-          --   },
-          typescript = {
-            inlayHints = {
-              includeCompletionsWithInsertText = true,
-              includeInlayParameterNameHints = "all",
-              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-              includeInlayFunctionParameterTypeHints = true,
-              includeInlayVariableTypeHints = true,
-              includeInlayPropertyDeclarationTypeHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayEnumMemberValueHints = true,
-            },
-          },
-          javascript = {
-            inlayHints = {
-              includeCompletionsWithInsertText = true,
-              includeInlayParameterNameHints = "all",
-              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-              includeInlayFunctionParameterTypeHints = true,
-              includeInlayVariableTypeHints = true,
-              includeInlayPropertyDeclarationTypeHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayEnumMemberValueHints = true,
-            },
+          inlayHints = {
+            variableTypes = { enabled = true },
+            parameterNames = { enabled = "all" },
           },
         },
       },
+      ---@type lspconfig.options.tailwindcss
       tailwindcss = {
         settings = {
           tailwindCSS = {
@@ -141,6 +159,7 @@ return {
           },
         },
       },
+      ---@type lspconfig.options.eslint
       eslint = {
         mason = false,
         -- root_dir = require("lspconfig.util").root_pattern("package.json"),
@@ -150,25 +169,26 @@ return {
           },
         },
       },
-      ---@type lspconfig.options.ruby_lsp
+      -- ---@type lspconfig.options.ruby_lsp
       -- ruby_lsp = {
       --   mason = false,
-      --   -- settings={
-      --   --  ruby_lsp={
-      --   --
-      --   --   }
-      --   -- }
+      --   settings = {
+      --     rubyLsp = {
+      --       featuresConfiguration = {
+      --         inlayHint = {
+      --           enableAll = true,
+      --         },
+      --       },
+      --     },
+      --   },
       -- },
       ---@type lspconfig.options.solargraph
       solargraph = {
-        enable = false,
         mason = false,
         settings = {
-          hint = {
-            enable = true,
-          },
           solargraph = {
             diagnostics = false,
+            useBundler = true,
           },
         },
       },

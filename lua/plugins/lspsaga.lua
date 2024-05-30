@@ -3,8 +3,10 @@ return {
   config = function()
     require("lspsaga").setup({
       code_action = {
-        num_shortcut = true,
         show_server_name = true,
+      },
+      lightbulb = {
+        enable = false,
       },
     })
   end,

@@ -10,6 +10,7 @@ vim.opt.cursorcolumn = true
 vim.opt.swapfile = false
 vim.opt.eof = true
 vim.opt.eol = true
+vim.opt.wrap = true
 
 vim.filetype.add({
   extension = {
