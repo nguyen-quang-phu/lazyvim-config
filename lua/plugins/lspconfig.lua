@@ -192,6 +192,10 @@ return {
           },
         },
       },
+      ---@type lspconfig.options.standardrb
+      -- standardrb = {
+      --   mason = false,
+      -- },
     },
   },
   init = function()
