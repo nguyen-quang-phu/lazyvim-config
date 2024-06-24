@@ -1,18 +1,24 @@
 return {
 
   "neovim/nvim-lspconfig",
+  ---@class PluginLspOpts
   opts = {
+    ---@type vim.diagnostic.Opts
     diagnostics = {
       virtual_text = {
-        format = function(diagnostic)
-          if diagnostic.code == nil then
-            return string.format("[%s]: %s", diagnostic.source, diagnostic.message)
-          end
-
-          return string.format("[%s]: %s (%s)", diagnostic.source, diagnostic.message, diagnostic.code)
-        end,
+        -- format = function(diagnostic)
+        --   if diagnostic.code == nil then
+        --     return string.format("[%s]: %s", diagnostic.source, diagnostic.message)
+        --   end
+        --
+        --   return string.format("[%s]: %s (%s)", diagnostic.source, diagnostic.message, diagnostic.code)
+        -- end,
       },
     },
+    -- codelens = {
+    --   enabled = true,
+    -- },
+
     ---@type lspconfig.options
     servers = {
       ---@type lspconfig.options.lua_ls
@@ -21,9 +27,9 @@ return {
           Lua = {
             hint = {
               enable = true,
-              setType = true,
               paramName = "All",
               paramType = true,
+              setType = true,
             },
           },
         },
@@ -185,6 +191,10 @@ return {
       ---@type lspconfig.options.solargraph
       solargraph = {
         mason = false,
+        filetypes = {
+          "ruby",
+          "slim",
+        },
         settings = {
           solargraph = {
             diagnostics = false,
@@ -202,5 +212,21 @@ return {
     local keys = require("lazyvim.plugins.lsp.keymaps").get()
     -- disable a keymap
     keys[#keys + 1] = { "gr", false }
+    
   end,
+  -- config = function()
+  --   require("lspconfig").efm.setup({
+  --     init_options = { documentFormatting = true },
+  --     filetypes = { "lua" },
+  --     settings = {
+  --       rootMarkers = { ".git/" },
+  --       languages = {
+  --         lua = {
+  --           require("efmls-configs.linters.luacheck"),
+  --           require("efmls-configs.formatters.stylua"),
+  --         },
+  --       },
+  --     },
+  --   })
+  -- end,
 }
