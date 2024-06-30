@@ -7,7 +7,7 @@ return {
     },
     keys = {
       {
-        "<leader>gr",
+        "gr",
         function()
           require("substitute").operator()
         end,
@@ -17,7 +17,7 @@ return {
         desc = "SUBSTITUTE: operator",
       },
       {
-        "<leader>grr",
+        "grr",
         function()
           require("substitute").line()
         end,
@@ -25,7 +25,7 @@ return {
         desc = "SUBSTITUTE: line",
       },
       {
-        "<leader>gr",
+        "gr",
         function()
           require("substitute").visual()
         end,

@@ -77,6 +77,7 @@ return {
         append_fname = true,
         stream = "stdout",
         stdin = false,
+        ignore_exitcode = true,
         parser = function(output)
           local diagnostics = {}
           local offences = vim.json.decode(output)
