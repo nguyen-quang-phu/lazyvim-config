@@ -18,6 +18,7 @@ return {
       timeout_ms = 30000,
     },
     formatters_by_ft = {
+       nix = { "alejandra" },
       go = { "gofumpt", "goimports-reviser", "golines" },
       ruby = { "rubocop" },
       eruby = { "erb_lint", "erb_formatter" },

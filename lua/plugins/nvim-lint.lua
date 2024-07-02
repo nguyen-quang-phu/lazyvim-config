@@ -13,6 +13,7 @@ return {
   opts = {
     linters_by_ft = {
       ["*"] = { "codespell" },
+       nix = { "statix" },
       lua = { "luacheck" },
       ruby = { "rubocop", "reek" },
       eruby = { "erb_lint" },
