@@ -5,7 +5,6 @@ return {
         local Keys = require("lazyvim.plugins.lsp.keymaps").get()
       -- stylua: ignore
       vim.list_extend(Keys, {
-        { "gd", false, desc = "Goto Definition", has = "definition" },
         { "gr", false, desc = "References", nowait = true },
         { "gI", false, desc = "Goto Implementation" },
         { "gy", false, desc = "Goto T[y]pe Definition" },
