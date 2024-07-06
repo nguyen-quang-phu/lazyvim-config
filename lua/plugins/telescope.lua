@@ -20,6 +20,15 @@ return {
   },
   keys = {
     {
+      "<leader><space>",
+      function()
+        require("telescope.builtin").live_grep()
+      end,
+      mode = "n",
+      desc = "TELESCOPE: Find Word in Project",
+    },
+
+    {
       "<leader>fw",
       function()
         require("telescope.builtin").live_grep()

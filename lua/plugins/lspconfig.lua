@@ -1,16 +1,16 @@
 return {
-    {
-      "neovim/nvim-lspconfig",
-      opts = function()
-        local Keys = require("lazyvim.plugins.lsp.keymaps").get()
+  {
+    "neovim/nvim-lspconfig",
+    opts = function()
+      local Keys = require("lazyvim.plugins.lsp.keymaps").get()
       -- stylua: ignore
       vim.list_extend(Keys, {
         { "gr", false, desc = "References", nowait = true },
         { "gI", false, desc = "Goto Implementation" },
         { "gy", false, desc = "Goto T[y]pe Definition" },
       })
-      end,
-    },
+    end,
+  },
   {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
@@ -210,6 +210,9 @@ return {
               useBundler = true,
             },
           },
+        },
+        nil_ls = {
+          mason = false,
         },
         ---@type lspconfig.options.standardrb
         -- standardrb = {
